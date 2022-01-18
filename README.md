@@ -18,8 +18,12 @@ Install Google Chrome.
 Import selenium, requests, time into a python3 environment of your choice 
 Install the Chrome webdriver from: https://chromedriver.chromium.org/home
 Pass in the directory location of your chromedriver.exe as a String argument into the Service object on line 29 
-Run Bsc_Contract_Scraper.py
 
 
 ![ce4e75df3c012907aee2c9559c250f30](https://user-images.githubusercontent.com/62744506/149964319-ce99bc2f-46ff-4cb7-8f89-c5791a8cb489.png)
+
+Run Bsc_Contract_Scraper.py
+New contracts will be printed into the console, you can then go to the contract code to find the links to eventual social media/website.
+
+
 
