@@ -13,17 +13,17 @@ However, as this scraper returns contracts when they just come out there is ampl
 
 Future versions might implement frameworks like pupeteer to bypass the captcha so we can run the driver headlessly without that annoying chrome window. 
 
-To run: 
-Install Google Chrome. 
-Import selenium, requests, time into a python3 environment of your choice 
-Install the Chrome webdriver from: https://chromedriver.chromium.org/home
-Pass in the directory location of your chromedriver.exe as a String argument into the Service object on line 29 
+To run:   
+1.Install Google Chrome.   
+2.Import selenium, requests, time into a python3 environment of your choice  
+3. Install the Chrome webdriver from: https://chromedriver.chromium.org/home    
+4. Pass in the directory location of your chromedriver.exe as a String argument into the Service object on line 29   
 
 
-![ce4e75df3c012907aee2c9559c250f30](https://user-images.githubusercontent.com/62744506/149964319-ce99bc2f-46ff-4cb7-8f89-c5791a8cb489.png)
+![ce4e75df3c012907aee2c9559c250f30](https://user-images.githubusercontent.com/62744506/149964319-ce99bc2f-46ff-4cb7-8f89-c5791a8cb489.png)   
 
-Run Bsc_Contract_Scraper.py
-New contracts will be printed into the console, you can then go to the contract code to find the links to eventual social media/website.
+5.  Run Bsc_Contract_Scraper.py     
+New contracts will be printed into the console, you can then go to the contract code to find the links to eventual social media/website.   
 
 
 
