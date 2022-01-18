@@ -1,4 +1,4 @@
-# Binance Smart Chain_ContractScraper_Evaluator
+# Binance Smart Chain Contract Scraper + Contract Evaluator
 Pulls Binance Smart Chain feed of newly-verified contracts every 30 seconds, then checks their contract code for links to socials.
 Returns only those with socials information included, and then submits the contract address to TokenSniffer to evaluate contract legitimacy.  
 
