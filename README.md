@@ -30,6 +30,8 @@ To run:
 ![ce4e75df3c012907aee2c9559c250f30](https://user-images.githubusercontent.com/62744506/149964319-ce99bc2f-46ff-4cb7-8f89-c5791a8cb489.png)   
 
 5.  Run Bsc_Contract_Scraper.py  
+
+
 New contracts will be printed into the console, you can then go to the contract code to find the links to eventual social media/website.   
 
 
