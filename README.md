@@ -2,7 +2,7 @@
 Pulls Binance Smart Chain feed of newly-verified contracts every 30 seconds, then checks their contract code for links to socials
 Returns only those with socials information included, and then submits the contract address to TokenSniffer to evaluate contract legitimacy
 Its common practice to include links to social media such as Telegram somewhere in the contract for added transparency, the idea of the scraper being to return new
-contracts just as they come out that have websites, social media etc. that demonstrates some level of ambition - just a website is often enough for decently high market caps.
+contracts just as they come out that have websites, social media etc. that demonstrates some level of ambition - just a website is often enough for decently high market caps.  
 Generally the contracts returned will never have high evaluation scores as they have just come out and TokenSniffers evaluation criteria is based on
 factors like buying fees, contract ownership renouncals, liquidity locks etc. which in most cases are set some time after contract verification.
 
@@ -22,7 +22,7 @@ To run:
 
 ![ce4e75df3c012907aee2c9559c250f30](https://user-images.githubusercontent.com/62744506/149964319-ce99bc2f-46ff-4cb7-8f89-c5791a8cb489.png)   
 
-5.  Run Bsc_Contract_Scraper.py     
+5.  Run Bsc_Contract_Scraper.py  
 New contracts will be printed into the console, you can then go to the contract code to find the links to eventual social media/website.   
 
 
