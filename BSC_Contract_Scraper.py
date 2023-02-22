@@ -15,6 +15,7 @@
 
 import requests
 import time
+import undetected_chromedriver as uc
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -26,8 +27,11 @@ from selenium.webdriver.chrome.service import Service
 URL = "https://bscscan.com/"
 contractsFeedURL = URL + "contractsVerified"
 
-service = Service("")  # Set string to directory location of your chromedriver exe (example: Service("C:\\Users\your_user\OneDrive\Desktop\Coding projects\chromedriver.exe")
-browser = webdriver.Chrome(service=service)
+options = uc.ChromeOptions()
+options.add_argument('--headless')
+
+#service = uc.chrome("C:\\Users\quant\Downloads\chromedriver.exe")
+browser = uc.Chrome(use_subprocess=True,options=options)
 
 payload = {}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Brave Chrome/83.0.4103.116 Safari/537.36'}
@@ -53,7 +57,7 @@ def ContractCheck(address):  # Check the contract code of a given token address 
     contractURL = URL + "address/" + address + "#code"
 
 
-    tokenSnifferUrl = "https://tokensniffer.com/token/" + address
+    tokenSnifferUrl = "https://tokensniffer.com/token/bsc/" + address
     bscScanRequest = requests.get(contractURL, headers=headers, data=payload)
 
     try:
@@ -66,24 +70,28 @@ def ContractCheck(address):  # Check the contract code of a given token address 
             time.sleep(3)
             browser.get(tokenSnifferUrl)
 
-
-            delay = 15
+            delay = 40
 
             try:
-                element_present = EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/main/div[2]/div[2]/div[1]/h3/span'))
+                element_present = EC.presence_of_element_located((By.XPATH, '/html/body/div/div/main/div[2]/div[2]/div[1]/table[1]/tbody/tr[1]/td/h2/span'))
                 WebDriverWait(browser, delay).until(element_present)
-                element = browser.find_element(By.XPATH, '//*[@id="__next"]/div/main/div[2]/div[2]/div[1]/h3/span')
+                element = browser.find_element(By.XPATH, '/html/body/div/div/main/div[2]/div[2]/div[1]/table[1]/tbody/tr[1]/td/h2/span')
                 tokenSnifferEval = element.text
 
                 if not tokenSnifferEval:
                     print("Token: " + tokenName + ", URL: " + contractURL)
+                    print("")
+
 
                 else:
                     print("Token: " + tokenName + ", URL: " + contractURL + ", TokenSniffer evaluation score: " + tokenSnifferEval)
+                    print("")
+                    time.sleep(3)
 
             except TimeoutException:
                 print("Token: " + tokenName + ", URL: " + contractURL)
-                print("Couldn't load TokenSniffer, took too much time or too many requests")
+                print("Couldn't load TokenSniffer for token " + tokenName + ", " + contractURL + ", took too much time or too many requests")
+                print("")
             leadAddresses.append(address)
         else:
             continue
