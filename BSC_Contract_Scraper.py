@@ -30,7 +30,6 @@ contractsFeedURL = URL + "contractsVerified"
 options = uc.ChromeOptions()
 options.add_argument('--headless')
 
-#service = uc.chrome("C:\\Users\quant\Downloads\chromedriver.exe")
 browser = uc.Chrome(use_subprocess=True,options=options)
 
 payload = {}
